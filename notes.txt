@@ -1,0 +1,12 @@
+
+operators generate structure describing change
+interpret to get specific implementations
+trying to allow polymorphic/monomorphic/parallel/etc interpretations
+
+-- Point Mutation
+data PMInstr
+  = PMPlace
+  | PMMove Int
+
+type PMInstructions = [PMInstr]
+

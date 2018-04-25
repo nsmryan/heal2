@@ -1,0 +1,114 @@
+heal-0.1.0.0: unregistering (local file changes: src/Heal/Scope.hs)
+Progress: 0/2             heal-0.1.0.0: build (lib + exe + bench)
+Progress: 0/2             Preprocessing library heal-0.1.0.0...
+Progress: 0/2             [6 of 7] Compiling Heal.Scope       ( src/Heal/Scope.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Heal/Scope.o )
+Progress: 0/2             Preprocessing executable 'heal' for heal-0.1.0.0...
+Progress: 0/2             Preprocessing benchmark 'heal-bench' for heal-0.1.0.0...
+Progress: 0/2             Linking .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/heal-bench/heal-bench ...
+Progress: 0/2             
+Progress: 0/2             Warning: modules not listed in heal.cabal for 'heal' component (add to other-modules):
+    Heal.Mutable
+    Heal.Utilities
+Progress: 0/2             heal-0.1.0.0: copy/register
+Progress: 0/2             Installing library in
+Progress: 0/2             /home/noah/Documents/heal/.stack-work/install/x86_64-linux/lts-7.10/8.0.1/lib/x86_64-linux-ghc-8.0.1/heal-0.1.0.0-13N1aLI6fWf4NikscYwI34
+Progress: 0/2             Installing executable(s) in
+Progress: 0/2             /home/noah/Documents/heal/.stack-work/install/x86_64-linux/lts-7.10/8.0.1/bin
+Progress: 0/2             Registering heal-0.1.0.0...
+Progress: 0/2             heal-0.1.0.0: benchmarks
+Progress: 0/2             Progress: 1/2             Running 1 benchmarks...
+Progress: 1/2             Benchmark heal-bench: RUNNING...
+Progress: 1/2             benchmarking Polymorphic Mutation (Seq,Vec,List)/pm seqseq 0.01
+Progress: 1/2             time                 882.7 μs   (874.2 μs .. 899.2 μs)
+Progress: 1/2                                  0.996 R²   (0.987 R² .. 1.000 R²)
+Progress: 1/2             mean                 883.1 μs   (875.9 μs .. 903.4 μs)
+Progress: 1/2             std dev              41.19 μs   (3.438 μs .. 77.26 μs)
+Progress: 1/2             variance introduced by outliers: 37% (moderately inflated)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Mutation (Seq,Vec,List)/pm vecvec 0.01
+Progress: 1/2             time                 657.8 μs   (657.0 μs .. 658.8 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 658.2 μs   (657.4 μs .. 659.2 μs)
+Progress: 1/2             std dev              2.942 μs   (2.360 μs .. 3.534 μs)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Mutation (Seq,Vec,List)/pm listlist 0.01
+Progress: 1/2             time                 656.8 μs   (655.6 μs .. 658.0 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 657.8 μs   (656.3 μs .. 659.9 μs)
+Progress: 1/2             std dev              5.567 μs   (4.217 μs .. 8.919 μs)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Mutation (Seq,Vec,List)/pm seqseq 0.8
+Progress: 1/2             time                 902.1 μs   (900.3 μs .. 904.1 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 901.5 μs   (900.1 μs .. 902.7 μs)
+Progress: 1/2             std dev              4.242 μs   (3.201 μs .. 6.040 μs)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Mutation (Seq,Vec,List)/pm vecvec 0.8
+Progress: 1/2             time                 679.0 μs   (677.9 μs .. 680.6 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 681.0 μs   (679.8 μs .. 682.1 μs)
+Progress: 1/2             std dev              3.845 μs   (3.121 μs .. 4.715 μs)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Mutation (Seq,Vec,List)/pm listlist 0.8
+Progress: 1/2             time                 669.6 μs   (668.6 μs .. 670.7 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 669.6 μs   (668.7 μs .. 670.6 μs)
+Progress: 1/2             std dev              3.423 μs   (2.751 μs .. 4.680 μs)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/SUS seq
+Progress: 1/2             time                 113.5 μs   (113.2 μs .. 113.9 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 113.2 μs   (113.1 μs .. 113.4 μs)
+Progress: 1/2             std dev              458.1 ns   (309.5 ns .. 645.5 ns)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/roulette seq
+Progress: 1/2             time                 246.1 μs   (245.8 μs .. 246.5 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 246.0 μs   (245.6 μs .. 246.5 μs)
+Progress: 1/2             std dev              1.378 μs   (876.9 ns .. 2.520 μs)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/tournament seq
+Progress: 1/2             time                 21.05 μs   (21.03 μs .. 21.07 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 21.04 μs   (21.03 μs .. 21.06 μs)
+Progress: 1/2             std dev              43.57 ns   (34.63 ns .. 57.99 ns)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/SUS vec
+Progress: 1/2             time                 113.2 μs   (112.6 μs .. 114.1 μs)
+Progress: 1/2                                  0.999 R²   (0.998 R² .. 1.000 R²)
+Progress: 1/2             mean                 113.0 μs   (112.6 μs .. 114.1 μs)
+Progress: 1/2             std dev              2.156 μs   (1.004 μs .. 3.817 μs)
+Progress: 1/2             variance introduced by outliers: 13% (moderately inflated)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/roulette vec
+Progress: 1/2             time                 236.1 μs   (235.6 μs .. 236.7 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 235.6 μs   (235.4 μs .. 236.1 μs)
+Progress: 1/2             std dev              1.181 μs   (864.5 ns .. 1.735 μs)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/tournament vec
+Progress: 1/2             time                 17.06 μs   (17.04 μs .. 17.07 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 17.05 μs   (17.04 μs .. 17.07 μs)
+Progress: 1/2             std dev              45.40 ns   (37.92 ns .. 62.74 ns)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/SUS list
+Progress: 1/2             time                 112.6 μs   (112.5 μs .. 112.8 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 112.7 μs   (112.6 μs .. 112.8 μs)
+Progress: 1/2             std dev              390.5 ns   (299.3 ns .. 504.1 ns)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/roulette list
+Progress: 1/2             time                 243.1 μs   (242.8 μs .. 243.4 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 243.2 μs   (243.0 μs .. 243.6 μs)
+Progress: 1/2             std dev              1.008 μs   (721.2 ns .. 1.378 μs)
+Progress: 1/2             
+Progress: 1/2             benchmarking Polymorphic Selection (Seq,Vec,List)/tournament list
+Progress: 1/2             time                 16.39 μs   (16.39 μs .. 16.40 μs)
+Progress: 1/2                                  1.000 R²   (1.000 R² .. 1.000 R²)
+Progress: 1/2             mean                 16.40 μs   (16.40 μs .. 16.41 μs)
+Progress: 1/2             std dev              19.35 ns   (16.88 ns .. 23.28 ns)
+Progress: 1/2             
+Progress: 1/2             Benchmark heal-bench: FINISH
+Progress: 1/2             Completed 2 action(s).

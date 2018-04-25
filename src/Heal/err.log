@@ -1,0 +1,26 @@
+heal-0.1.0.0: build
+Preprocessing library heal-0.1.0.0...
+[4 of 4] Compiling Heal.Polymorphic ( src/Heal/Polymorphic.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Heal/Polymorphic.o )
+
+/home/noah/Documents/heal/src/Heal/Polymorphic.hs:141:36: error:
+    • Couldn't match expected type ‘t a -> [(a, a)]’
+                  with actual type ‘[(a, a)]’
+    • The function ‘pairs’ is applied to one argument,
+      but its type ‘[(a, a)]’ has none
+      In the second argument of ‘traverse’, namely ‘(pairs t)’
+      In the second argument of ‘(<$>)’, namely ‘traverse f (pairs t)’
+    • Relevant bindings include
+        pairs :: [(a, a)] (bound at src/Heal/Polymorphic.hs:109:7)
+        t :: t a (bound at src/Heal/Polymorphic.hs:107:11)
+        f :: (a, a) -> f (a, a) (bound at src/Heal/Polymorphic.hs:107:9)
+        onPairs :: ((a, a) -> f (a, a)) -> t a -> f (t a)
+          (bound at src/Heal/Polymorphic.hs:107:1)
+
+If the above build failed with a linker error or .so/DLL error, addressing these may help:
+Warning: modules not listed in heal.cabal for 'heal' component (add to other-modules):
+    Heal.Mutable
+    Heal.Utilities
+
+--  While building package heal-0.1.0.0 using:
+      /home/noah/.stack/setup-exe-cache/x86_64-linux/setup-Simple-Cabal-1.24.2.0-ghc-8.0.1 --builddir=.stack-work/dist/x86_64-linux/Cabal-1.24.2.0 build lib:heal exe:heal --ghc-options " -ddump-hi -ddump-to-file"
+    Process exited with code: ExitFailure 1

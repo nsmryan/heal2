@@ -1,0 +1,190 @@
+heal-0.1.0.0: benchmarks
+Running 1 benchmarks...
+Benchmark heal-bench: RUNNING...
+benchmarking Polymorphic Mutation (Seq,Vec,List)/pm seqseq 0.01
+time                 889.2 μs   (887.6 μs .. 890.8 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 892.5 μs   (890.5 μs .. 898.5 μs)
+std dev              10.03 μs   (3.725 μs .. 19.58 μs)
+
+benchmarking Polymorphic Mutation (Seq,Vec,List)/pm vecvec 0.01
+time                 671.9 μs   (668.5 μs .. 676.0 μs)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 669.3 μs   (665.9 μs .. 676.0 μs)
+std dev              16.06 μs   (8.155 μs .. 25.57 μs)
+variance introduced by outliers: 14% (moderately inflated)
+
+benchmarking Polymorphic Mutation (Seq,Vec,List)/pm listlist 0.01
+time                 673.7 μs   (668.0 μs .. 682.3 μs)
+                     0.999 R²   (0.998 R² .. 1.000 R²)
+mean                 676.9 μs   (672.0 μs .. 684.7 μs)
+std dev              20.43 μs   (11.10 μs .. 31.46 μs)
+variance introduced by outliers: 21% (moderately inflated)
+
+benchmarking Polymorphic Mutation (Seq,Vec,List)/pm seqseq 0.8
+time                 1.002 ms   (972.3 μs .. 1.018 ms)
+                     0.996 R²   (0.996 R² .. 0.998 R²)
+mean                 949.9 μs   (940.8 μs .. 963.8 μs)
+std dev              35.79 μs   (26.85 μs .. 43.43 μs)
+variance introduced by outliers: 27% (moderately inflated)
+
+benchmarking Polymorphic Mutation (Seq,Vec,List)/pm vecvec 0.8
+time                 679.0 μs   (676.6 μs .. 681.2 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 684.8 μs   (683.5 μs .. 686.3 μs)
+std dev              4.723 μs   (3.867 μs .. 6.515 μs)
+
+benchmarking Polymorphic Mutation (Seq,Vec,List)/pm listlist 0.8
+time                 693.2 μs   (691.9 μs .. 694.3 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 693.7 μs   (692.6 μs .. 695.1 μs)
+std dev              4.073 μs   (3.099 μs .. 5.722 μs)
+
+benchmarking Poly vs Mono Mutation (Seq,Vec,List)/poly pm seqseq 0.01
+time                 916.1 μs   (915.0 μs .. 917.4 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 917.4 μs   (915.8 μs .. 919.1 μs)
+std dev              5.828 μs   (4.685 μs .. 7.637 μs)
+
+benchmarking Poly vs Mono Mutation (Seq,Vec,List)/poly pm vecvec 0.01
+time                 670.9 μs   (667.9 μs .. 675.7 μs)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 669.9 μs   (668.5 μs .. 672.5 μs)
+std dev              6.549 μs   (4.273 μs .. 11.67 μs)
+
+benchmarking Poly vs Mono Mutation (Seq,Vec,List)/poly pm listlist 0.01
+time                 670.9 μs   (664.5 μs .. 683.1 μs)
+                     0.999 R²   (0.998 R² .. 1.000 R²)
+mean                 665.9 μs   (664.1 μs .. 670.8 μs)
+std dev              9.255 μs   (3.851 μs .. 18.16 μs)
+
+benchmarking Poly vs Mono Mutation (Seq,Vec,List)/mono pm 0.01
+time                 15.50 μs   (15.49 μs .. 15.51 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 15.51 μs   (15.50 μs .. 15.53 μs)
+std dev              43.55 ns   (35.63 ns .. 57.10 ns)
+
+benchmarking Poly vs Mono Mutation (Seq,Vec,List)/poly pm seqseq 0.8
+time                 965.1 μs   (941.4 μs .. 997.6 μs)
+                     0.996 R²   (0.993 R² .. 1.000 R²)
+mean                 944.7 μs   (937.4 μs .. 957.4 μs)
+std dev              33.25 μs   (18.96 μs .. 48.66 μs)
+variance introduced by outliers: 25% (moderately inflated)
+
+benchmarking Poly vs Mono Mutation (Seq,Vec,List)/poly pm vecvec 0.8
+time                 680.9 μs   (679.2 μs .. 684.4 μs)
+                     0.999 R²   (0.997 R² .. 1.000 R²)
+mean                 691.7 μs   (686.2 μs .. 704.5 μs)
+std dev              26.85 μs   (11.08 μs .. 44.67 μs)
+variance introduced by outliers: 31% (moderately inflated)
+
+benchmarking Poly vs Mono Mutation (Seq,Vec,List)/poly pm listlist 0.8
+time                 673.3 μs   (672.0 μs .. 674.5 μs)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 676.9 μs   (673.6 μs .. 689.9 μs)
+std dev              20.60 μs   (2.312 μs .. 43.63 μs)
+variance introduced by outliers: 21% (moderately inflated)
+
+benchmarking Poly vs Mono Mutation (Seq,Vec,List)/mono pm 0.8
+time                 1.159 ms   (1.156 ms .. 1.161 ms)
+                     1.000 R²   (0.999 R² .. 1.000 R²)
+mean                 1.164 ms   (1.158 ms .. 1.184 ms)
+std dev              32.60 μs   (4.568 μs .. 69.12 μs)
+variance introduced by outliers: 17% (moderately inflated)
+
+benchmarking Mono Mutation Rates/mono pm 0.01
+time                 15.55 μs   (15.54 μs .. 15.56 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 15.54 μs   (15.53 μs .. 15.56 μs)
+std dev              38.42 ns   (29.23 ns .. 54.62 ns)
+
+benchmarking Mono Mutation Rates/mono pm 0.20
+time                 270.8 μs   (270.4 μs .. 271.3 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 270.8 μs   (270.6 μs .. 271.1 μs)
+std dev              789.9 ns   (644.2 ns .. 938.0 ns)
+
+benchmarking Mono Mutation Rates/mono pm 0.40
+time                 558.4 μs   (543.4 μs .. 575.0 μs)
+                     0.996 R²   (0.994 R² .. 0.999 R²)
+mean                 542.1 μs   (537.9 μs .. 550.2 μs)
+std dev              18.18 μs   (11.29 μs .. 31.61 μs)
+variance introduced by outliers: 25% (moderately inflated)
+
+benchmarking Mono Mutation Rates/mono pm 0.60
+time                 919.3 μs   (907.8 μs .. 936.6 μs)
+                     0.997 R²   (0.993 R² .. 0.999 R²)
+mean                 896.1 μs   (887.1 μs .. 910.3 μs)
+std dev              37.03 μs   (24.87 μs .. 64.44 μs)
+variance introduced by outliers: 32% (moderately inflated)
+
+benchmarking Mono Mutation Rates/mono pm 0.80
+time                 1.227 ms   (1.182 ms .. 1.286 ms)
+                     0.987 R²   (0.978 R² .. 0.999 R²)
+mean                 1.202 ms   (1.185 ms .. 1.231 ms)
+std dev              75.47 μs   (47.46 μs .. 115.6 μs)
+variance introduced by outliers: 49% (moderately inflated)
+
+benchmarking Mono Mutation Rates/mono pm 1.00
+time                 732.1 μs   (729.8 μs .. 735.6 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 732.4 μs   (730.6 μs .. 734.3 μs)
+std dev              6.116 μs   (4.859 μs .. 8.012 μs)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/SUS seq
+time                 116.7 μs   (116.2 μs .. 117.2 μs)
+                     0.999 R²   (0.999 R² .. 1.000 R²)
+mean                 120.5 μs   (118.9 μs .. 123.3 μs)
+std dev              7.082 μs   (4.440 μs .. 11.80 μs)
+variance introduced by outliers: 60% (severely inflated)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/roulette seq
+time                 250.3 μs   (249.9 μs .. 250.8 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 250.9 μs   (250.4 μs .. 251.6 μs)
+std dev              1.927 μs   (1.533 μs .. 2.384 μs)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/tournament seq
+time                 21.50 μs   (21.48 μs .. 21.52 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 21.52 μs   (21.50 μs .. 21.54 μs)
+std dev              64.14 ns   (48.46 ns .. 86.94 ns)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/SUS vec
+time                 114.2 μs   (113.9 μs .. 114.4 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 114.1 μs   (113.9 μs .. 114.4 μs)
+std dev              979.6 ns   (758.5 ns .. 1.558 μs)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/roulette vec
+time                 237.8 μs   (237.5 μs .. 238.1 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 238.0 μs   (237.7 μs .. 238.4 μs)
+std dev              1.102 μs   (907.0 ns .. 1.450 μs)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/tournament vec
+time                 17.55 μs   (17.52 μs .. 17.59 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 17.52 μs   (17.50 μs .. 17.55 μs)
+std dev              78.45 ns   (61.32 ns .. 106.6 ns)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/SUS list
+time                 114.8 μs   (114.6 μs .. 114.9 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 114.8 μs   (114.6 μs .. 115.1 μs)
+std dev              809.9 ns   (644.6 ns .. 1.197 μs)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/roulette list
+time                 245.5 μs   (245.1 μs .. 245.8 μs)
+                     1.000 R²   (1.000 R² .. 1.000 R²)
+mean                 245.3 μs   (245.1 μs .. 245.7 μs)
+std dev              957.3 ns   (763.5 ns .. 1.304 μs)
+
+benchmarking Polymorphic Selection (Seq,Vec,List)/tournament list
+time                 17.07 μs   (16.77 μs .. 17.48 μs)
+                     0.997 R²   (0.996 R² .. 0.999 R²)
+mean                 16.91 μs   (16.74 μs .. 17.15 μs)
+std dev              681.4 ns   (462.7 ns .. 857.1 ns)
+variance introduced by outliers: 48% (moderately inflated)
+
+Benchmark heal-bench: FINISH

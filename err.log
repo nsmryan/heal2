@@ -1,0 +1,15 @@
+heal-0.1.0.0: build
+Preprocessing library heal-0.1.0.0...
+[6 of 7] Compiling Heal.Scope       ( src/Heal/Scope.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Heal/Scope.o )
+[7 of 7] Compiling Heal.Monomorphic ( src/Heal/Monomorphic.hs, .stack-work/dist/x86_64-linux/Cabal-1.24.2.0/build/Heal/Monomorphic.o ) [Heal.Scope changed]
+Preprocessing executable 'heal' for heal-0.1.0.0...
+
+Warning: modules not listed in heal.cabal for 'heal' component (add to other-modules):
+    Heal.Mutable
+    Heal.Utilities
+heal-0.1.0.0: copy/register
+Installing library in
+/home/noah/Documents/heal/.stack-work/install/x86_64-linux/lts-7.10/8.0.1/lib/x86_64-linux-ghc-8.0.1/heal-0.1.0.0-13N1aLI6fWf4NikscYwI34
+Installing executable(s) in
+/home/noah/Documents/heal/.stack-work/install/x86_64-linux/lts-7.10/8.0.1/bin
+Registering heal-0.1.0.0...

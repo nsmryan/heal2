@@ -13,10 +13,8 @@ module Heal.Mutable
   , createVectorPopulationBits 
   ) where
 
-
 import Data.Vector as V
 import Data.Vector.Unboxed.Mutable as UM
-import Data.Vector.Unboxed as VU
 import System.Random.MWC 
 import System.Random.MWC.Monad as MWC
 import System.Random.MWC.Distributions.Monad as MWC
@@ -54,7 +52,7 @@ pointMutationLoci prob f p = do
 onIndices ::
   (Unbox a, MonadIO m) =>
   [Int] -> (a -> m a) -> IOVector a -> m (IOVector a)
-onIndices []       f p = return p
+onIndices []       _ p = return p
 onIndices (ix:ixs) f p = do
   a  <- liftIO $ UM.unsafeRead p ix
   a' <- f a
@@ -70,7 +68,7 @@ eachIndex f v = CM.mapM indexF [0 .. UM.length v - 1] >> return v
                             liftIO $ UM.unsafeWrite v index a'
 
 eachIndex_ ::
-  (Unbox a, Monad m, MonadIO m) =>
+  (Unbox a, MonadIO m) =>
   (Int -> a -> m ()) -> IOVector a -> m ()
 eachIndex_ f v = CM.mapM_ indexF [0 .. UM.length v - 1]
     where indexF index = do a  <- liftIO $ UM.unsafeRead v index
@@ -90,8 +88,8 @@ pointMutation f prob p =
 pointMutationBits ::
   Int -> Double -> V.Vector (IOVector Word32) -> Rand IO (V.Vector (IOVector Word32))
 pointMutationBits is prob p =
-  V.mapM (eachIndex (mutateWord is)) p
-    where mutateWord is lociIndex w =
+  V.mapM (eachIndex mutateWord) p
+    where mutateWord lociIndex w =
             let numBits = if lociIndex == ((is `div` 32) -1) && (is `mod` 32 /= 0)
                           then is `mod` 32
                           else 32
@@ -128,9 +126,12 @@ crossover1pBits is pc p =
          then do let ind  = p V.! (2 * indIndex)
                  let ind' = p V.! (2 * indIndex + 1)
                  iovectorCross is ind ind'
-         else return [()]
+         else return ()
     return p
 
+iovectorCross :: 
+  (Unbox a, Bits a, MonadIO m, MonadPrim m, Num a) =>
+  Int -> IOVector a -> IOVector a -> Rand m ()
 iovectorCross is ind ind' =
   do crossPoint <- MWC.uniformR (0, is - 1)
      CM.forM [0 .. crossPoint `div` 32] $ \ index -> do
@@ -145,6 +146,7 @@ iovectorCross is ind ind' =
                                else (a, a')
        liftIO $ UM.write ind  index aCross'
        liftIO $ UM.write ind' index aCross
+     return ()
 
 {- Selection -}
 -- Roulette Wheel
@@ -152,8 +154,8 @@ iovectorCross is ind ind' =
 -- This could reuse old individuals to save on allocation.
 rouletteWheel ::
   (Unbox a) =>
-  Int -> V.Vector (IOVector a, Double) -> Rand IO (V.Vector (IOVector a))
-rouletteWheel is population = 
+  V.Vector (IOVector a, Double) -> Rand IO (V.Vector (IOVector a))
+rouletteWheel population = 
   let table = MWC.tableFromWeights population
       copyInd newPopulation index oldInd =
         do let newInd = newPopulation V.! index
@@ -180,11 +182,11 @@ createVectorPopulationBits ps is =
   do let numLoci = (is `div` 32) + (if is `mod` 32 /= 0 then 1 else 0)
      p <- createVectorPopulation ps numLoci
      let maskUpper numBits w = w .&. (bit numBits - 1)
-     let maskLastLoci' ind = do loci <- UM.read ind $ numLoci - 1
-                                let extraBits = is `mod` 32
-                                UM.write ind (numLoci-1) $ maskUpper (if extraBits /= 0 then extraBits else 32) loci
-     let maskLastLoci p = V.mapM maskLastLoci' p
-     liftIO $ maskLastLoci p
+     let maskLastLoci ind = do loci <- UM.read ind $ numLoci - 1
+                               let extraBits = is `mod` 32
+                               let bitMask = if extraBits /= 0 then extraBits else 32
+                               UM.write ind (numLoci-1) $ maskUpper bitMask loci
+     liftIO $ V.mapM maskLastLoci p
      return p
                 
 
@@ -202,7 +204,7 @@ standardGeneticAlgorithm pm pc ps is gens eval =
      let evolve = pointMutationStd pm   >=>
                   crossover1p pc        >=>
                   evaluationM eval      >=>
-                  rouletteWheel is
+                  rouletteWheel
      timesM gens evolve population
 
 standardGeneticAlgorithmBits ::
@@ -218,7 +220,7 @@ standardGeneticAlgorithmBits pm pc ps is gens eval =
      let evolve = pointMutationBits is pm  >=>
                   crossover1pBits is pc    >=>
                   evaluationM eval         >=>
-                  rouletteWheel is
+                  rouletteWheel
      timesM gens evolve population
 
 

@@ -151,7 +151,7 @@ cross ::
 cross iSize numPoints indPair =
   do points <- L.sort <$> replicateM numPoints (MWC.uniformR (0, iSize))
      let offsets = snd $ mapAccumL (\acc n -> (n, n - acc)) 0 points
-     return $ repairCrossed $ cross' (trace (show offsets) offsets) $ indPair
+     return $ repairCrossed $ cross' offsets $ indPair
 
 repairCrossed :: (Monoid a, Monoid t) => [(a, t)] -> (a, t)
 repairCrossed pairs = (mconcat . map fst $ pairs, mconcat . map snd $ pairs)
@@ -254,7 +254,6 @@ standardGeneticAlgorithm pm pc ps is gens createPopulation eval =
      liftIO $ print "\n"
      let evolve = pointMutationBit pm ps is  >=>
                   crossoverBitsScoped pc ps is >=>
-                  (\p -> liftIO (print (V.length p)) >> return p) >=>
                   (return . evaluation eval) >=>
                   rouletteWheel
      timesM gens evolve population

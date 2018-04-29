@@ -68,7 +68,9 @@ sometimesR prob f a = do
 
 {- Evaluation -}
 evaluate :: (a -> Double) -> a -> (a, Double)
-evaluate f a = (a, f a)
+evaluate f a = let e = (a, fitness)
+                   fitness = f a
+               in fitness `seq` e
 
 evaluation :: (Functor f) => (a -> Double) -> f a -> f (a, Double)
 evaluation f p = fmap (evaluate f) p
